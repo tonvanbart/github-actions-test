@@ -4,13 +4,15 @@ on:
 
 jobs:
   push-workflow-job:
+    name: jon for push
+    runs-on: ubuntu-latest 
     steps:
       - uses: actions/checkout@v2
 
-    name: dump github context
-    env:
-      GITHUB_CONTEXT: ${{ toJson(github) }}
-      run: echo "$GITHUB_CONTEXT"
+      - name: dump github context
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+          run: echo "$GITHUB_CONTEXT"
 
     # name: dump contents of file
       # run: cat ${{ github.workspace }}/contents.txt    
