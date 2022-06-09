@@ -8,6 +8,7 @@ on:
 
 jobs:
   merge-workflow-job:
+    name: job for PR merge
     if: ${{ github.event.pull_request.merged }}
     runs-on: ubuntu-latest
     steps:
