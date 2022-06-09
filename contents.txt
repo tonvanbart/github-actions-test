@@ -1,1 +1,2 @@
-Initial contents of the file.
+This is the initial contents of the file.
+---
