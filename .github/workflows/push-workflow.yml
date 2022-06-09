@@ -15,4 +15,7 @@ jobs:
         run: echo "$GITHUB_CONTEXT"
 
       - name: dump contents of file
-        run: cat ${{ github.workspace }}/contents.txt    
+        run: cat ${{ github.workspace }}/contents.txt 
+
+      - name: dump contents of second file
+        run: cat ${{ github.workspace }}/second.txt     
