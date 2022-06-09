@@ -1,2 +1,4 @@
 This is the initial content of the second file.
 ---
+This is an edit made on branch 2.
+---
