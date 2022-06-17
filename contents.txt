@@ -3,3 +3,5 @@ This is the initial contents of the file.
 This is an edit from branch 1.
 ---
 another edit to fake a new release
+---
+this keeps getting better and better!

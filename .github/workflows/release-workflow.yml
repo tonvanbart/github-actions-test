@@ -1,6 +1,10 @@
 name: workflow for release
 on:
   release:
+    types: [published]
+
+env:
+  TAG_TO_RELEASE: ${{ github.event.release.tag_name }}    
 
 jobs:
   release-workflow-job:
@@ -12,10 +16,12 @@ jobs:
       - name: dump github context
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
-        run: echo "$GITHUB_CONTEXT"
+          RELEASE_TAG: ${{ github.event.release.tag_name }}
+        run: |
+          echo "$GITHUB_CONTEXT"
+          echo "::set-env name=RELEASETAG::$RELEASE_TAG"
 
-      - name: dump contents of file
-        run: cat ${{ github.workspace }}/contents.txt 
-
-      - name: dump contents of second file
-        run: cat ${{ github.workspace }}/second.txt     
+      - name: separator
+        run: |
+          echo "----------------- $RELEASETAG ----------------------"   
+          echo "or set from top of job: $TAG_TO_RELEASE"  
