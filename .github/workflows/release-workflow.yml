@@ -19,9 +19,7 @@ jobs:
           RELEASE_TAG: ${{ github.event.release.tag_name }}
         run: |
           echo "$GITHUB_CONTEXT"
-          echo "::set-env name=RELEASETAG::$RELEASE_TAG"
 
       - name: separator
         run: |
-          echo "----------------- $RELEASETAG ----------------------"   
-          echo "or set from top of job: $TAG_TO_RELEASE"  
+          echo "set from top of job: $TAG_TO_RELEASE"  
