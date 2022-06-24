@@ -1,0 +1,11 @@
+{
+    "action": "published",
+    "release": {
+        "base": {
+            "ref": "main"
+        },
+        "draft": "false",
+        "name": "name from github",
+        "tag_name": "1.2.3" 
+    }
+}

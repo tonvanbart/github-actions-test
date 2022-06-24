@@ -17,7 +17,9 @@ jobs:
       - name: dump github context
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
-        run: echo "$GITHUB_CONTEXT"
+        run: |
+          echo "$GITHUB_CONTEXT"
+          echo "secrets: ${{ toJson(secrets) }}"
 
       - name: dump contents of file
         run: cat ${{ github.workspace }}/contents.txt
