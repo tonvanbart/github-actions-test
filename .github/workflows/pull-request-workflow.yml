@@ -1,0 +1,25 @@
+name: workflow for pull requests
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  merge-workflow-job:
+    name: job for pull request
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: dump github context
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+        run: |
+          echo "$GITHUB_CONTEXT"
+          echo "secrets: ${{ toJson(secrets) }}"
+
+      - name: dump contents of file
+        run: cat ${{ github.workspace }}/contents.txt
+
+      - name: dump contents of second file
+        run: cat ${{ github.workspace }}/second.txt      
